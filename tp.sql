@@ -1,5 +1,7 @@
+--Ejercicio 1: Crear Base de Datos
 CREATE DATABASE veterinaria_patitas_felices;
 USE veterinaria_patitas_felices;
+
 --Ejercicio 2: Crear Tabla Duenos
 CREATE TABLE duenos (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,6 +10,7 @@ CREATE TABLE duenos (
     telefono VARCHAR(20) NOT NULL,
     direccion VARCHAR(100)
 )
+    
 --Ejercicio 3: Crear Tabla Mascotas
 CREATE TABLE mascotas (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,6 +20,7 @@ CREATE TABLE mascotas (
     id_dueno INT,
     FOREIGN KEY (id_dueno) REFERENCES duenos(id)
 )
+    
 --Ejercicio 4:Crear Tabla Veterinarios
 CREATE TABLE veterinarios (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -75,4 +79,5 @@ JOIN mascotas m ON hc.id_mascota = m.id
 JOIN duenos d ON m.id_dueno = d.id
 JOIN veterinarios v ON hc.id_veterinario = v.id
 ORDER BY hc.fecha_registro DESC;
+
 
