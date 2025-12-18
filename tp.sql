@@ -73,4 +73,6 @@ SELECT hc.fecha_registro, hc.descripcion, m.nombre, m.especie , d.nombre , d.ape
 FROM historial_clinico hc
 JOIN mascotas m ON hc.id_mascota = m.id
 JOIN duenos d ON m.id_dueno = d.id
-JOIN veterinarios v ON hc.id_veterinario = v.id;
+JOIN veterinarios v ON hc.id_veterinario = v.id
+ORDER BY hc.fecha_registro DESC;
+
